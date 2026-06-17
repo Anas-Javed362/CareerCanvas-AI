@@ -1,0 +1,327 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgDecor {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepIndicator {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Progress bar */
+.progressWrap {
+  height: 3px;
+  background: var(--bg-muted);
+  position: sticky;
+  top: 65px;
+  z-index: 9;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-full);
+  max-width: 100%;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-10) var(--space-4);
+}
+
+.card {
+  width: 100%;
+  max-width: 680px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step header */
+.stepHeader {
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.stepIcons {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.stepDot.current {
+  background: var(--color-secondary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.stepDot.done {
+  background: var(--color-success);
+  color: white;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.stepSubtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+}
+
+/* Step content */
+.stepContent {
+  padding: var(--space-6) var(--space-8);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* Role grid */
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.roleCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem var(--space-3);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  background: var(--bg-surface);
+}
+
+.roleCard:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.roleCard.selected {
+  border-color: var(--color-secondary);
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Checkbox chips */
+.checkGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.checkChip {
+  padding: 0.3125rem 0.75rem;
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  background: var(--bg-surface);
+}
+
+.checkChip:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.checkChip.checked {
+  border-color: var(--color-secondary);
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8) var(--space-8);
+  border-top: 1px solid var(--border-default);
+  gap: var(--space-4);
+}
+
+/* Generating screen */
+.generating {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.genContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.genLogo {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+}
+
+.genContent h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.genContent p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 360px;
+}
+
+.genDots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.genDot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .header {
+    padding: var(--space-4);
+  }
+
+  .card {
+    border-radius: var(--radius-xl);
+  }
+
+  .stepHeader {
+    padding: var(--space-6);
+  }
+
+  .stepContent {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .actions {
+    padding: var(--space-4) var(--space-6) var(--space-6);
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .roleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

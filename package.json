@@ -1,0 +1,42 @@
+{
+  "name": "careercanvas-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "framer-motion": "^11.11.7",
+    "recharts": "^2.13.3",
+    "@hello-pangea/dnd": "^17.0.0",
+    "react-hook-form": "^7.53.2",
+    "lucide-react": "^0.454.0",
+    "react-toastify": "^10.0.6",
+    "axios": "^1.7.7",
+    "jspdf": "^2.5.2",
+    "html2canvas": "^1.4.1",
+    "canvas-confetti": "^1.9.3",
+    "date-fns": "^4.1.0",
+    "use-debounce": "^10.0.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.5.2",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0"
+  }
+}

@@ -1,0 +1,293 @@
+.page {
+  padding: var(--space-6) var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.progressBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.progressNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.progressLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.progressBar {
+  margin-bottom: var(--space-6);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.monthBlock {
+  position: relative;
+}
+
+.monthLabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.monthLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-default);
+}
+
+.monthMilestones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-left: var(--space-2);
+}
+
+/* List view */
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Milestone Card */
+.milestoneCard {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.milestoneCard.in_progress {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.02);
+}
+
+.milestoneCard.completed {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.02);
+}
+
+.milestoneCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+}
+
+.statusBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.statusBtn:hover {
+  transform: scale(1.15);
+}
+
+.inProgressDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-warning);
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.cardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.cardName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.milestoneCard.completed .cardName {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.expandBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  display: flex;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.expandBtn:hover {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+/* Card body */
+.cardBody {
+  padding: 0 var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-default);
+  margin-top: var(--space-1);
+  padding-top: var(--space-4);
+  overflow: hidden;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.deadlineRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Resources */
+.resources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.resourcesTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.resourceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.resourceCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.3125rem 0.75rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: var(--bg-surface);
+  transition: all var(--transition-fast);
+}
+
+.resourceCard:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.extIcon {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-4);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .headerRight {
+    flex-wrap: wrap;
+  }
+}
